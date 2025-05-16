@@ -1,16 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   orinakkk.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: algaboya <algaboya@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/28 15:35:14 by algaboya          #+#    #+#             */
-/*   Updated: 2025/05/06 17:45:45 by algaboya         ###   ########.fr       */
+/*   Created: 2025/04/29 14:03:51 by algaboya          #+#    #+#             */
+/*   Updated: 2025/05/17 02:49:47 by algaboya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "cub3D.h"
+#include "../cub3D.h"
+
+void	free_array(char **arr)
+{
+	int	i;
+
+	i = 0;
+	if (!arr)
+		return ;
+	while (arr[i])
+	{
+		free_set_null(arr[i]);
+		i++;
+	}
+	free_set_null(arr[i]);
+	free(arr);
+	arr = NULL;
+	return ;
+}
+
+void	free_data(t_config *data)
+{
+	free_array(data->map);
+	data->map = NULL;
+	free_set_null(data->no_tex);
+	free_set_null(data->so_tex);
+	free_set_null(data->we_tex);
+	free_set_null(data->ea_tex);
+}
 
 void error_msg_exit(char *msg, int status)
 {
@@ -32,3 +60,16 @@ bool is_empty(char *str)
         return (true);
     return (false);
 }
+
+
+
+
+
+
+	
+	
+
+
+
+
+

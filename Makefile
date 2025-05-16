@@ -8,8 +8,11 @@ MLX = minilibx-linux/libmlx.a
 
 MLXFLAGS = -lXext -lX11 -lm -lz
 
-SRC = main.c utils.c \
-	  validation.c get_next_line.c\
+SRC = main.c \
+		validation/color.c \
+		validation/validation.c get_next_line.c \
+		validation/free.c validation/map.c \
+		validation/texture.c validation/valid_utils.c \
 
 OBJ = $(SRC:.c=.o)
 

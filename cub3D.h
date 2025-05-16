@@ -6,7 +6,7 @@
 /*   By: algaboya <algaboya@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 20:04:28 by algaboya          #+#    #+#             */
-/*   Updated: 2025/05/17 01:50:04 by algaboya         ###   ########.fr       */
+/*   Updated: 2025/05/17 02:42:58 by algaboya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,9 @@ void	empty_lines(t_config *data, char *map);
 void	char_check(t_config *data, char *map);
 void	clean_and_exit(char *error_msg, void *ptr, t_config *data);
 void	map_to_matrix(char *map, t_config *data);
+void	valid_walls(t_config *data);
+void	check_walls(t_config *data, int i, int j);
+
 
 //color
 int valid_color(char **splitted);
