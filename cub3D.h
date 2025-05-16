@@ -6,7 +6,7 @@
 /*   By: algaboya <algaboya@student.42yerevan.am    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/18 20:04:28 by algaboya          #+#    #+#             */
-/*   Updated: 2025/05/11 15:00:18 by algaboya         ###   ########.fr       */
+/*   Updated: 2025/05/17 01:50:04 by algaboya         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 3
-#  define EXIT_FAILURE 1
+#  define EXIT_FAILURE -1
 #  define EXIT_SUCCESS 0
 #  define MALLOC_ERROR 4
 # endif
@@ -28,8 +28,7 @@
 # include <stdbool.h>
 # include "minilibx-linux/mlx.h"
 # include "Libft/libft.h"
-// # include "Get_Next_Line/get_next_line.h"
- 
+
 typedef struct s_config
 {
 	char *no_tex;
@@ -59,6 +58,18 @@ int		set_texture(t_config *data, char **splitted);
 void	free_array(char **str);
 void	free_data(t_config *data);
 int		check_malloc(void *ptr);
+char	*map_reading(int fd);
+void	map(t_config *data, int fd);
+char	*my_join(char const *s1, char const *s2);
+void	empty_lines(t_config *data, char *map);
+void	char_check(t_config *data, char *map);
+void	clean_and_exit(char *error_msg, void *ptr, t_config *data);
+void	map_to_matrix(char *map, t_config *data);
+
+//color
+int valid_color(char **splitted);
+int	get_color(char *color);
+int	set_color(t_config *data, char **splitted);
 
 // get_next_line
 
